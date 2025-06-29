@@ -10,13 +10,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import java.sql.Ref
 
-class Detalles : AppCompatActivity() {
+class DetalleActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_detalles)
+        setContentView(R.layout.activity_detalle)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -25,7 +24,7 @@ class Detalles : AppCompatActivity() {
 
         val btnActualizarEstado = findViewById<Button>(R.id.btnActualizarEstado)
         btnActualizarEstado.setOnClickListener{
-            var intent = Intent(this, Registro::class.java)
+            var intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
 
@@ -44,15 +43,15 @@ class Detalles : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_inicio -> {
-                var intent = Intent(this, Inicio::class.java)
+                var intent = Intent(this, ColaboradorActivity::class.java)
                 startActivity(intent)
             }
             R.id.menu_registro -> {
-                var intent = Intent(this, Registro::class.java)
+                var intent = Intent(this, RegistroActivity::class.java)
                 startActivity(intent)
             }
             R.id.menu_cerrar -> {
-                var intent = Intent(this, MainActivity::class.java)
+                var intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
         }

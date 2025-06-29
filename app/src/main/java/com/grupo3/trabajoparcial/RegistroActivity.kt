@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Registro : AppCompatActivity() {
+class RegistroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -25,7 +25,7 @@ class Registro : AppCompatActivity() {
 
         val btnEnviarTicket = findViewById<Button>(R.id.btnEnviarTicket)
         btnEnviarTicket.setOnClickListener{
-            var intent = Intent(this, Detalles::class.java)
+            var intent = Intent(this, DetalleActivity::class.java)
             startActivity(intent)
         }
 
@@ -71,15 +71,15 @@ class Registro : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_inicio -> {
-                var intent = Intent(this, Inicio::class.java)
+                var intent = Intent(this, ColaboradorActivity::class.java)
                 startActivity(intent)
             }
             R.id.menu_registro -> {
-                var intent = Intent(this, Registro::class.java)
+                var intent = Intent(this, RegistroActivity::class.java)
                 startActivity(intent)
             }
             R.id.menu_cerrar -> {
-                var intent = Intent(this, MainActivity::class.java)
+                var intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
         }

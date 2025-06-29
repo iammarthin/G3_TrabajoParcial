@@ -11,29 +11,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class Inicio : AppCompatActivity() {
+class ColaboradorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_inicio)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        setContentView(R.layout.activity_inicio_colaborador)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawerLayout)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val btnNuevoTicket = findViewById<Button>(R.id.btnNuevoTicket)
-        btnNuevoTicket.setOnClickListener{
-            var intent = Intent(this, Registro::class.java)
-            startActivity(intent)
-        }
 
 
-        val VerDetalles = findViewById<TextView>(R.id.txtVerDetalles)
-        VerDetalles.setOnClickListener{
-            var intent = Intent(this, Detalles::class.java)
-            startActivity(intent)
-        }
+
+
 
     }
 
@@ -45,15 +37,15 @@ class Inicio : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_inicio -> {
-                var intent = Intent(this, Inicio::class.java)
+                var intent = Intent(this, ColaboradorActivity::class.java)
                 startActivity(intent)
             }
             R.id.menu_registro -> {
-                var intent = Intent(this, Registro::class.java)
+                var intent = Intent(this, RegistroActivity::class.java)
                 startActivity(intent)
             }
             R.id.menu_cerrar -> {
-                var intent = Intent(this, MainActivity::class.java)
+                var intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">G3_TrabajoParcial</string>
+
+    <string name="msj_olvidocontraseña">Por tu seguridad, solicita el cambio de contraseña en el área de soporte presentando tu identificación.</string>
+
+    <string-array name="estado_tickets">
+        <item>Todos</item>
+        <item>En curso</item>
+        <item>Finalizado</item>
+        <item>Pendiente</item>
+    </string-array>
+
 </resources>

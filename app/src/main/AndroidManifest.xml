@@ -13,17 +13,24 @@
         android:theme="@style/Theme.G3_TrabajoParcial"
         tools:targetApi="31">
         <activity
-            android:name=".Detalles"
+            android:name=".AdminActivity"
             android:exported="false" />
         <activity
-            android:name=".Registro"
+            android:name=".TecnicoActivity"
             android:exported="false" />
         <activity
-            android:name=".Inicio"
+            android:name=".DetalleActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".RegistroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ColaboradorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.G3_TrabajoParcial.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

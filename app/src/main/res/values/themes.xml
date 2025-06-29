@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <!-- Tema sin ActionBar (para LoginActivity) -->
+    <style name="Theme.G3_TrabajoParcial.NoActionBar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Colores opcionales -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorSecondary">@color/purple_700</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
 </resources>

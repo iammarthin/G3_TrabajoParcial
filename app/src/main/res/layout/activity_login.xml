@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dp">
+
+            <ImageView
+                android:id="@+id/imgFondoDecorativo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/bg_login_decorativo" />
+
+            <ImageView
+                android:id="@+id/imgIlustracion"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/logo_sunati"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:paddingLeft="60dp"
+            android:paddingRight="60dp">
+
+            <TextView
+                android:id="@+id/txtWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bienvenido,"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:textColor="#000000"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicie sesion para continuar"
+                android:textSize="14sp"
+                android:textColor="#888888"
+                android:layout_marginBottom="24dp"/>
+
+            <EditText
+                android:id="@+id/txtCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Usuario"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="8dp"
+                android:background="@drawable/edittext_background"
+                android:paddingHorizontal="16dp"
+                android:inputType="textEmailAddress"
+                android:textColor="#000000"
+                android:textColorHint="#999999" />
+
+            <EditText
+                android:id="@+id/txtClave"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Contraseña"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawablePadding="8dp"
+                android:background="@drawable/edittext_background"
+                android:paddingHorizontal="16dp"
+                android:drawableEnd="@drawable/ic_eye_off"
+                android:inputType="textPassword"
+                android:textColor="#000000"
+                android:textColorHint="#999999"
+                android:layout_marginTop="12dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/txtOlvidoClave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Olvido su contraseña?"
+                android:textSize="13sp"
+                android:textColor="#FF5722"
+                android:gravity="end"
+                android:layout_marginTop="6dp" />
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Ingresar"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginTop="24dp"
+                app:cornerRadius="12dp"
+                app:backgroundTint="@color/rojo"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
