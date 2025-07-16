@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/txtTicketId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="#1234"
+        android:textStyle="bold"
+        android:textColor="#002F6C" />
+
+    <TextView
+        android:id="@+id/txtEstado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🟡 EN CURSO - 10/06/2025"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/txtCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🖥 CATEGORÍA: HARDWARE"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/txtVerDetalle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VER DETALLES"
+        android:textColor="#E60000"
+        android:layout_gravity="end"
+        android:textStyle="bold" />
+</LinearLayout>

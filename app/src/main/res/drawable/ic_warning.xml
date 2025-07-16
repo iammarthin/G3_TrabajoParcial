@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Triángulo de advertencia -->
+    <path
+        android:fillColor="#FF9800"
+        android:pathData="M1,21h22L12,2 1,21z" />
+
+    <!-- Signo de exclamación - línea -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,10h2v5h-2z" />
+
+    <!-- Signo de exclamación - punto -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M11,16h2v2h-2z" />
+</vector>
+
