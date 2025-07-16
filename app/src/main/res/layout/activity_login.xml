@@ -63,7 +63,7 @@
                 android:layout_marginBottom="24dp"/>
 
             <EditText
-                android:id="@+id/txtCorreo"
+                android:id="@+id/txtUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:hint="Usuario"

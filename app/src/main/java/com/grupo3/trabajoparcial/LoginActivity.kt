@@ -14,7 +14,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.grupo3.trabajoparcial.DAO.UsuarioDAO
+import com.grupo3.trabajoparcial.api.LoginRepository
 
 class LoginActivity : AppCompatActivity() {
     @SuppressLint("ClickableViewAccessibility")
@@ -78,36 +78,38 @@ class LoginActivity : AppCompatActivity() {
             false
         }
 
+        val loginRepo = LoginRepository()
 
-        // Ingresar
-        val txtUsuario = findViewById<EditText>(R.id.txtCorreo)
-        //val txtClave = findViewById<EditText>(R.id.txtClave)
         val btnLogin = findViewById<Button>(R.id.btnLogin)
-
-        val dao = UsuarioDAO(this)
+        val txtUsuario = findViewById<EditText>(R.id.txtUsuario)
 
         btnLogin.setOnClickListener {
             val usuario = txtUsuario.text.toString()
             val clave = txtClave.text.toString()
 
-            val daoUsuario = dao.autenticar(usuario, clave)
+            //Toast.makeText(this, "" +usuario +" "+ clave, Toast.LENGTH_SHORT).show()
 
-            if (daoUsuario != null) {
-                Toast.makeText(this, "Bienvenido, ${daoUsuario.rol}", Toast.LENGTH_SHORT).show()
-                when (daoUsuario.rol) {
-                    "colaborador" -> startActivity(Intent(this, ColaboradorActivity::class.java))
-                    "tecnico" -> startActivity(Intent(this, TecnicoActivity::class.java))
-                    "administrador" -> startActivity(Intent(this, AdminActivity::class.java))
-                    else -> Toast.makeText(this, "Rol no reconocido", Toast.LENGTH_SHORT).show()
+            loginRepo.autenticar(this, usuario, clave) { success, usuario ->
+                if (success && usuario != null) {
+                    when (usuario.rol.lowercase()) {
+                        "admin" -> startActivity(Intent(this, AdminActivity::class.java))
+                        "tecnico" -> startActivity(Intent(this, TecnicoActivity::class.java))
+                        "colaborador" -> startActivity(Intent(this, ColaboradorActivity::class.java).apply {
+                            putExtra("nombre_usuario", usuario.nombre)
+                            putExtra("id_usuario", usuario.id)
+                        })
+                        else -> Toast.makeText(this, "Rol no reconocido", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "" +success, Toast.LENGTH_SHORT).show()
                 }
-                finish()
-            } else {
-                Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show()
             }
         }
 
 
-
+//-------------------------------------------------------
+//-------------------------------------------------------
 
 
 
