@@ -4,5 +4,6 @@ data class Ticket(
     val id_ticket: Int,
     val estado: String,
     val fecha: String,
-    val categoria: String
+    val categoria: String,
+    val descripcion: String
 )

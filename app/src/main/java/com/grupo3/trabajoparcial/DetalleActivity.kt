@@ -42,14 +42,6 @@ class DetalleActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.menu_inicio -> {
-                var intent = Intent(this, ColaboradorActivity::class.java)
-                startActivity(intent)
-            }
-            R.id.menu_registro -> {
-                var intent = Intent(this, RegistroActivity::class.java)
-                startActivity(intent)
-            }
             R.id.menu_cerrar -> {
                 var intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)

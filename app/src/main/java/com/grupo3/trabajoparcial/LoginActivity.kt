@@ -28,7 +28,6 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        //Mostrar dialogo
         val txtOlvidoClave = findViewById<TextView>(R.id.txtOlvidoClave)
         txtOlvidoClave.setOnClickListener {
             val dialogView = layoutInflater.inflate(R.layout.dialog_recuperacion, null)
@@ -47,7 +46,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-        // Mostrar y ocultar contraseña
         val txtClave = findViewById<EditText>(R.id.txtClave)
 
         txtClave.setOnTouchListener { _, event ->
@@ -87,16 +85,24 @@ class LoginActivity : AppCompatActivity() {
             val usuario = txtUsuario.text.toString()
             val clave = txtClave.text.toString()
 
-            //Toast.makeText(this, "" +usuario +" "+ clave, Toast.LENGTH_SHORT).show()
 
             loginRepo.autenticar(this, usuario, clave) { success, usuario ->
                 if (success && usuario != null) {
                     when (usuario.rol.lowercase()) {
-                        "admin" -> startActivity(Intent(this, AdminActivity::class.java))
-                        "tecnico" -> startActivity(Intent(this, TecnicoActivity::class.java))
+                        "admin" -> startActivity(Intent(this, AdminActivity::class.java).apply {
+                            putExtra("nombre_usuario", usuario.nombre)
+                            putExtra("id_usuario", usuario.id)
+                            putExtra("rol_usuario", usuario.rol)
+                        })
+                        "tecnico" -> startActivity(Intent(this, TecnicoActivity::class.java).apply {
+                            putExtra("nombre_usuario", usuario.nombre)
+                            putExtra("id_usuario", usuario.id)
+                            putExtra("rol_usuario", usuario.rol)
+                        })
                         "colaborador" -> startActivity(Intent(this, ColaboradorActivity::class.java).apply {
                             putExtra("nombre_usuario", usuario.nombre)
                             putExtra("id_usuario", usuario.id)
+                            putExtra("rol_usuario", usuario.rol)
                         })
                         else -> Toast.makeText(this, "Rol no reconocido", Toast.LENGTH_SHORT).show()
                     }
@@ -106,11 +112,6 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-
-
-//-------------------------------------------------------
-//-------------------------------------------------------
-
 
 
     }

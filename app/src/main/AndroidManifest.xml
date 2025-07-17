@@ -20,7 +20,8 @@
             android:exported="false" />
         <activity
             android:name=".TecnicoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.G3_TrabajoParcial.NoActionBar"/>
         <activity
             android:name=".DetalleActivity"
             android:exported="false" />

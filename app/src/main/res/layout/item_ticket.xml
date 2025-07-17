@@ -28,7 +28,7 @@
         android:textSize="13sp" />
 
     <TextView
-        android:id="@+id/txtVerDetalle"
+        android:id="@+id/txtVerDetalles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="VER DETALLES"

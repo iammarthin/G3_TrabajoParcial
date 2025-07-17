@@ -2,21 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
-        android:id="@+id/menu_inicio"
-        android:title="Inicio"
-        android:icon="@drawable/ic_home"
-        app:showAsAction="always"/>
-
-    <item
-        android:id="@+id/menu_registro"
-        android:title="Busqueda"
-        android:icon="@drawable/ic_registro"
-        app:showAsAction="always"/>
 
     <item
         android:id="@+id/menu_cerrar"
-        android:title="Registro"
+        android:title="Salir"
         android:icon="@drawable/ic_logout"
         app:showAsAction="always"/>
 
